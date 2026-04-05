@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signature Animation Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0d1326 0%, #1a2847 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Sora', sans-serif;
+      color: #fff;
+    }
+
+    .demo-container {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      border: 1px solid rgba(122, 240, 210, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #7af0d2;
+    }
+
+    .demo-box {
+      background: rgba(13, 19, 38, 0.6);
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+
+    .demo-label {
+      font-size: 0.9rem;
+      color: #54b2ff;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(122, 240, 210, 0.2);
+      color: #7af0d2;
+      border: 1px solid #7af0d2;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(122, 240, 210, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .info {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: rgba(56, 189, 248, 0.1);
+      border-left: 4px solid #38bdf8;
+      border-radius: 5px;
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    @keyframes drawSignature {
+      0% {
+        stroke-dashoffset: 500;
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+    }
+
+    .signature-path {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: drawSignature 3.5s ease-in-out 0.5s forwards;
+      filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.4));
+      font-size: 48px;
+      font-weight: 500;
+      font-family: 'Sora', sans-serif;
+    }
+
+    svg.restart .signature-path {
+      animation: none;
+      stroke-dashoffset: 500;
+    }
+
+    svg.restart.animate .signature-path {
+      animation: drawSignature 2.5s ease-in-out 0.5s forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h1>✨ Signature Animation Demo</h1>
+    <p style="color: #999; margin-bottom: 2rem;">See your name drawn smoothly like a pen</p>
+
+    <div class="demo-box">
+      <div class="demo-label">Your Signature</div>
+      <svg class="hero-signature" viewBox="0 0 350 100" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="signatureGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <text class="signature-path" x="10" y="60" stroke="url(#signatureGrad)" fill="none" stroke-width="1.5">prem ranjan</text>
+      </svg>
+    </div>
+
+    <div class="button-group">
+      <button class="btn-primary" onclick="restartAnimation()">🔄 Restart Animation</button>
+      <button class="btn-secondary" onclick="toggleSpeed()">⚡ Toggle Speed</button>
+    </div>
+
+    <div class="info">
+      <strong>How it works:</strong>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+        <li>✓ Your name "prem ranjan" draws smoothly like a pen writing</li>
+        <li>✓ Cyan gradient color with glowing effect</li>
+        <li>✓ Takes 3.5 seconds to complete</li>
+        <li>✓ Plays automatically when page loads</li>
+        <li>✓ Responsive on all screen sizes</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let isSlowSpeed = false;
+    const svg = document.querySelector('.hero-signature');
+    const path = document.querySelector('.signature-path');
+
+    function restartAnimation() {
+      svg.classList.add('restart');
+      svg.offsetHeight; // Trigger reflow
+      svg.classList.add('animate');
+    }
+
+    function toggleSpeed() {
+      isSlowSpeed = !isSlowSpeed;
+      if (isSlowSpeed) {
+        path.style.animation = 'drawSignature 4.5s ease-in-out 0.5s forwards';
+      } else {
+        path.style.animation = 'drawSignature 3.5s ease-in-out 0.5s forwards';
+      }
+      restartAnimation();
+    }
+
+    // Auto-trigger on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        svg.classList.add('animate');
+      }, 300);
+    });
+  </script>
+</body>
+</html>

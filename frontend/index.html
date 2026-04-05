@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | CSE (AI/ML) Student</title>
+  <meta
+    name="description"
+    content="Professional portfolio website for a CSE (AI/ML) student featuring projects, skills, certifications, and contact details."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="site-header glass">
+    <a href="#home" class="brand"></a>
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">Menu</button>
+    </div>
+    <nav id="mainNav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#journey">Journey</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <!-- Loading Skeleton -->
+    <div id="loadingSkeleton" class="loading-skeleton" style="display: none;">
+      <div class="skeleton-hero"></div>
+      <div class="skeleton-section"></div>
+      <div class="skeleton-section"></div>
+      <div class="skeleton-section"></div>
+    </div>
+
+    <section class="hero section reveal">
+      <div class="hero-profile-section">
+        <div class="hero-profile-image" id="heroProfileImage"></div>
+        <svg class="hero-signature" viewBox="0 0 350 100" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="signatureGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <text class="signature-path" x="40" y="60" stroke="url(#signatureGrad)" fill="none" stroke-width="1.5">prem ranjan</text>
+        </svg>
+        <svg class="hero-underline" viewBox="0 0 200 30" preserveAspectRatio="xMidYMid meet">
+          <path class="underline-path" d="M 10 20 Q 50 10, 100 20 T 190 20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="hero-tag" id="heroTag">Open to internships</p>
+      <h1 id="heroName">Your Name</h1>
+      <h2 id="heroRole">B.Tech CSE (AI/ML) | Software Developer</h2>
+      <p class="hero-summary" id="heroSummary"></p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" id="resumeLink" href="#" target="_blank" rel="noreferrer">Resume</a>
+        <a class="btn btn-secondary" href="#contact">Contact Me</a>
+      </div>
+
+      <div class="hero-stats" id="heroStats"></div>
+    </section>
+
+    <section class="section reveal" id="about">
+      <h3 class="section-title">About Me</h3>
+      <div class="glass card">
+        <p id="aboutText"></p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="education">
+      <h3 class="section-title">Education</h3>
+      <div class="glass card" id="educationCard"></div>
+    </section>
+
+    <section class="section reveal" id="skills">
+      <h3 class="section-title">Skills</h3>
+      <div class="chips" id="skillsChips"></div>
+    </section>
+
+    <section class="section reveal" id="projects">
+      <div class="section-head">
+        <h3 class="section-title">Projects</h3>
+        <p>Highlighted work with impact and practical outcomes.</p>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <button id="viewAllProjectsBtn" style="padding: 10px 24px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.3s;" onclick="toggleViewAllProjects()" style="display:none;">View All Projects</button>
+      </div>
+    </section>
+
+    <section class="section reveal" id="experience">
+      <h3 class="section-title">Experience</h3>
+      <div class="timeline" id="experienceTimeline"></div>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <button id="viewAllExperienceBtn" style="padding: 10px 24px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.3s;" onclick="toggleViewAllExperience()" style="display:none;">View All Experience</button>
+      </div>
+    </section>
+
+    <section class="section reveal" id="journey">
+      <h3 class="section-title">My Learning Journey</h3>
+      <div class="journey-container">
+        <div class="journey-timeline" id="journeyTimeline"></div>
+        <div class="skills-progression" id="skillsProgression"></div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="certifications">
+      <h3 class="section-title">Certifications</h3>
+      <ul class="cert-list" id="certList"></ul>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <button id="viewAllCertsBtn" style="padding: 10px 24px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; transition: all 0.3s;" onclick="toggleViewAllCertifications()" style="display:none;">View All Certifications</button>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contact">
+      <h3 class="section-title">Contact</h3>
+      <div class="contact-grid">
+        <div class="glass card">
+          <p>Interested in internships, projects, or collaborations? Reach out.</p>
+          <ul class="contact-list" id="contactList">
+            <li><strong>Email:</strong> <a href="mailto:p5123ranjan@gmail.com">p5123ranjan@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+919973305771">+91-9973305771</a></li>
+            <li><strong>Location:</strong> Patna, Bihar, India</li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prem-ranjan-6b0277253/" target="_blank" rel="noreferrer">View Profile</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/Ranjan05-coder" target="_blank" rel="noreferrer">View Repository</a></li>
+            <li><strong>X:</strong> <a href="https://x.com/p_ranjan05" target="_blank" rel="noreferrer">@p_ranjan05</a></li>
+          </ul>
+        </div>
+
+        <form class="glass card contact-form" id="contactForm">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="your@email.com" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" placeholder="Write your message" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+          <p class="form-note">Your message will be sent to my email inbox.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p id="footerText"></p>
+  </footer>
+
+  <!-- Image Viewer Modal -->
+  <div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 9999; justify-content: center; align-items: center;">
+    <div style="position: relative; max-width: 90vw; max-height: 90vh;">
+      <img id="modalImage" src="" alt="Full size image" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;">
+      <button onclick="closeImageModal()" style="position: absolute; top: 10px; right: 10px; background: white; border: none; padding: 10px 15px; border-radius: 50%; cursor: pointer; font-size: 20px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">✕</button>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" style="display: none; position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); border: none; color: white; font-size: 24px; cursor: pointer; z-index: 999; box-shadow: 0 10px 28px rgba(84, 178, 255, 0.35); transition: all 0.3s ease; opacity: 0; transform: scale(0); align-items: center; justify-content: center;" aria-label="Scroll to top" title="Back to top">
+    ↑
+  </button>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

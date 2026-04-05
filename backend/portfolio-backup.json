@@ -1,0 +1,151 @@
+{
+  "hero": {
+    "name": "Prem Ranjan",
+    "role": "BTech (AI/ML) Student | Software Developer",
+    "summary": "Passionate about building intelligent systems and scalable applications. Interested in Machine Learning, Full-Stack Development, and Cloud Technologies.",
+    "tag": "Open to internships & collaborations",
+    "resumeUrl": "#",
+    "profileImage": "",
+    "stats": [
+      "10+ Projects",
+      "5 Certifications",
+      "Patna, Bihar"
+    ]
+  },
+  "_id": "69d22d37a5c15b4747208965",
+  "about": "I'm a B.Tech student in Computer Science with a specialization in AI/ML. I love solving real-world problems using technology and continuously learning new skills. My focus is on building applications that make a difference.",
+  "skills": [
+    "Python",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Machine Learning",
+    "TensorFlow",
+    "Pandas",
+    "SQL",
+    "REST APIs",
+    "Git",
+    "AWS",
+    "Vercel",
+    "Figma"
+  ],
+  "projects": [
+    {
+      "title": "Portfolio CMS",
+      "summary": "Admin-controlled portfolio website with zero-redeployment updates. Features real-time data sync, history tracking, and email notifications.",
+      "tech": [
+        "Node.js",
+        "React",
+        "MongoDB",
+        "JWT"
+      ],
+      "imageUrl": "",
+      "live": "#",
+      "code": "https://github.com/Ranjan05-coder",
+      "_id": "69d22da66138a87b0f1126df"
+    },
+    {
+      "title": "AI Chatbot",
+      "summary": "Machine learning chatbot with NLP capabilities",
+      "tech": [
+        "Python",
+        "TensorFlow",
+        "Flask"
+      ],
+      "imageUrl": "",
+      "live": "#",
+      "code": "#",
+      "_id": "69d22da66138a87b0f1126e0"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Developer",
+      "org": "Personal Projects",
+      "period": "2023 - Present",
+      "details": "Building full-stack applications and experimenting with ML models",
+      "_id": "69d22da66138a87b0f1126e1"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Machine Learning Specialization - Coursera",
+      "imageUrl": null,
+      "link": "https://coursera.org/verify/specialization",
+      "_id": "69d22da66138a87b0f1126e2"
+    },
+    {
+      "name": "AWS Cloud Practitioner",
+      "imageUrl": null,
+      "link": "https://aws.amazon.com/certification/",
+      "_id": "69d22da66138a87b0f1126e3"
+    },
+    {
+      "name": "Python for Data Science - NPTEL",
+      "imageUrl": null,
+      "link": "https://nptel.ac.in/",
+      "_id": "69d22da66138a87b0f1126e4"
+    },
+    {
+      "name": "SQL (Intermediate) - HackerRank",
+      "imageUrl": null,
+      "link": "https://www.hackerrank.com/",
+      "_id": "69d22da66138a87b0f1126e5"
+    }
+  ],
+  "education": [
+    {
+      "type": "higher",
+      "degree": "B.Tech",
+      "college": "Your Institution",
+      "duration": "2021 - 2025",
+      "cgpaType": "cgpa",
+      "cgpaValue": "7.5",
+      "_id": "69d22da66138a87b0f1126e6"
+    }
+  ],
+  "contact": [
+    {
+      "label": "Email",
+      "value": "p5123ranjan@gmail.com",
+      "contactType": "email",
+      "_id": "69d22da66138a87b0f1126e7"
+    },
+    {
+      "label": "Phone",
+      "value": "+91-9973305771",
+      "contactType": "phone",
+      "_id": "69d22da66138a87b0f1126e8"
+    },
+    {
+      "label": "Location",
+      "value": "Patna, Bihar, India",
+      "contactType": "location",
+      "_id": "69d22da66138a87b0f1126e9"
+    },
+    {
+      "label": "LinkedIn",
+      "value": "https://www.linkedin.com/in/prem-ranjan-6b0277253/",
+      "contactType": "custom",
+      "_id": "69d22da66138a87b0f1126ea"
+    },
+    {
+      "label": "GitHub",
+      "value": "https://github.com/Ranjan05-coder",
+      "contactType": "custom",
+      "_id": "69d22da66138a87b0f1126eb"
+    },
+    {
+      "label": "X",
+      "value": "https://x.com/p_ranjan05",
+      "contactType": "custom",
+      "_id": "69d22da66138a87b0f1126ec"
+    }
+  ],
+  "journey": [],
+  "skillsProgression": [],
+  "lastUpdated": "2026-04-05T09:36:55.977Z",
+  "__v": 0
+}
