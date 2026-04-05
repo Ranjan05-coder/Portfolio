@@ -14,3 +14,4 @@ const API_BASE = (() => {
 })();
 
 console.log('✅ API Base URL:', API_BASE);
+console.log('Production API configured for:', window.location.hostname);
