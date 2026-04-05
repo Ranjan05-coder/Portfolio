@@ -1,4 +1,11 @@
-const API_BASE = "http://localhost:5000/api";
+// Use config.js API_BASE if available, otherwise set default
+const API_BASE = (typeof window !== 'undefined' && window.API_BASE) ? window.API_BASE : (() => {
+  const hostname = window.location.hostname;
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return 'http://localhost:5000/api';
+  }
+  return 'https://my-portfolio-iram.onrender.com/api';
+})();
 const id = (selector) => document.querySelector(selector);
 
 // Image Viewer Modal Functions

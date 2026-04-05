@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="deployment-version" content="v1.2" />
   <title>Portfolio | CSE (AI/ML) Student</title>
   <meta
     name="description"
@@ -185,6 +186,13 @@
   </button>
 
   <script src="data.js"></script>
+  <script src="config.js"></script>
+  <script>
+    // Force production backend URL override for safety
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      window.API_BASE = 'https://my-portfolio-iram.onrender.com/api';
+    }
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
