@@ -10,7 +10,7 @@ const API_BASE = (() => {
   }
   
   // Production - Render backend URL
-  return 'https://my-portfolio-ai96.onrender.com/api';
+  return 'https://my-portfolio-iram.onrender.com/api';
 })();
 
 console.log('✅ API Base URL:', API_BASE);
