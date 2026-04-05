@@ -21,7 +21,8 @@ app.use(cors({
       "http://localhost:3000",
       "http://127.0.0.1:3000",
       "http://192.168.0.103:3000",
-      "http://192.168.0.108:3000"
+      "http://192.168.0.108:3000",
+      "https://my-portfolio-ai96.onrender.com"
     ];
     
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
